@@ -1,0 +1,68 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+ body {
+ 	background-color: #f9f9fa;
+ }
+
+ #index-banner {
+ 	background-color: #fff;
+ }
+
+ #viewall, #signin, #submit, #admin {
+	min-height: 65vh;
+}
+
+#viewall>.row:nth-child(2), #admin>.row {
+	margin-bottom: 0;
+}
+
+#viewall h4 {
+	color: #ff9800;
+	margin: 5px auto;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.container {
+	width: 77%;
+}
+
+img {
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
+	clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
+}
+
+.sub-heading a {
+	float: right;
+	margin: 5px 15px;
+	font-size: 1.2em;
+}
+
+.sub-heading h4 {
+	color: #ff9800;
+	margin: 0 10px;
+}
+.sub-heading h5 {
+	margin: 10px 10px 0;
+	color: #A8A8A8;
+}
+
+.card .card-content {
+	margin-top: -20px;
+}
+
+.card a.author {
+	color: #B0B0B0;
+	text-transform: none;
+}
+.card a.author:hover {
+	color: #ffab40;
+}
