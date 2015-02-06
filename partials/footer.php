@@ -11,7 +11,7 @@
                     <ul>
                         <li><a class="white-text" href="https://www.facebook.com/groups/georgianweb/"><i class="mdi-social-people"></i> GC Web Group</a>
                         </li>
-                        <li><a href="https://github.com/LiyinZ" class="white-text"><i class="mdi-file-cloud-queue"></i> GitHub</a></li>
+                        <li><a href="https://github.com/LiyinZ" class="white-text"><i class="mdi-file-cloud-queue"></i> GitHub (Source Available)</a></li>
                     </ul>
                 </div>
                 <div class="col l3 s12" id="contact">

@@ -7,7 +7,7 @@
     <title><?= $title; ?></title>
     <!-- CSS  -->
     <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="css/style.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body>

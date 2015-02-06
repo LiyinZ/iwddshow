@@ -33,8 +33,8 @@ include 'partials/intro.php';
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">
-                        	<?= $project['name']; ?>
-                        	 <i class="mdi-navigation-more-vert right"></i>
+                        	<span class="activator"><?= $project['name']; ?></span>
+                        	<i class="mdi-navigation-more-vert right"></i>
                         </span>
                         <p>By <?php if (empty($project['user_url'])): ?>
 							<?= $project['first_name'] . ' ' . $project['last_name']; ?>
@@ -46,6 +46,7 @@ include 'partials/intro.php';
                     	</p>
                         <p>
                         	<a href="/iwddshow/functions/view_count.php?url=<?= $project['url']; ?>">Visit Link</a>
+                            <i class="mdi-action-favorite right"> 5</i>
                         	<i class="mdi-image-remove-red-eye right"> <?= $project['view_count']; ?></i>
                         </p>
                     </div>
@@ -79,8 +80,8 @@ include 'partials/intro.php';
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">
-                        	<?= $project['name']; ?>
-                        	 <i class="mdi-navigation-more-vert right"></i>
+                        	<span class="activator"><?= $project['name']; ?></span>
+                            <i class="mdi-navigation-more-vert right"></i>
                         </span>
                         <p>By <?php if (empty($project['user_url'])): ?>
 							<?= $project['first_name'] . ' ' . $project['last_name']; ?>
@@ -92,6 +93,7 @@ include 'partials/intro.php';
                     	</p>
                         <p>
                         	<a href="/iwddshow/functions/view_count.php?url=<?= $project['url']; ?>">Visit Link</a>
+                            <i class="mdi-action-favorite right"> 5</i>
                         	<i class="mdi-image-remove-red-eye right"> <?= $project['view_count']; ?></i>
                         </p>
                     </div>
