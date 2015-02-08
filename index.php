@@ -4,6 +4,8 @@ require 'functions/main.php';
 
 $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
 
+// $_SESSION['ip'] = "173.224.120.84"; // test
+
 $conn = connect($local_db);
 
 // fetch projects and order by most views and most recent
@@ -45,7 +47,7 @@ include 'partials/intro.php';
                     	</p>
                         <p>
                         	<a href="/iwddshow/functions/view_count.php?url=<?= $project['url']; ?>">Visit Link</a>
-                            <i id="<?= $project['project_id'] ?>" onclick="like_add(<?= $project['project_id'] ?>)" class="mdi-action-favorite right"> <?= $project['likes'] ?></i>
+                            <i onclick="like_add(<?= $project['project_id'] ?>)" class="mdi-action-favorite right <?= 'project-' . $project['project_id'] ?>"> <?= $project['likes'] ?></i>
                         	<i class="mdi-image-remove-red-eye right"> <?= $project['view_count']; ?></i>
                         </p>
                     </div>
@@ -92,7 +94,7 @@ include 'partials/intro.php';
                     	</p>
                         <p>
                         	<a href="/iwddshow/functions/view_count.php?url=<?= $project['url']; ?>">Visit Link</a>
-                            <i id="<?= $project['project_id'] ?>" onclick="like_add(<?= $project['project_id'] ?>)" class="mdi-action-favorite right"> <?= $project['likes'] ?></i>
+                            <i onclick="like_add(<?= $project['project_id'] ?>)" class="mdi-action-favorite right <?= 'project-' . $project['project_id'] ?>"> <?= $project['likes'] ?></i>
                         	<i class="mdi-image-remove-red-eye right"> <?= $project['view_count']; ?></i>
                         </p>
                     </div>

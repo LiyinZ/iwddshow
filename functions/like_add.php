@@ -9,8 +9,10 @@ if ( isset($_POST['project_id']) &&  isset($_SESSION['ip']) ) {
 		$ip = $_SESSION['ip'];
 		if ( prev_liked($project_id, $ip, $conn) ) {
 			unlike($project_id, $ip, $conn);
+			echo 'unliked';
 		} else {
 			add_like($project_id, $ip, $conn);
+			echo 'liked';
 		}
 	}
 	$conn = null;

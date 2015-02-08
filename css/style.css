@@ -82,10 +82,12 @@
 	margin: 10px auto -13px;
 }
 
-.card-content p a ~ i {
+.mdi-action-favorite, .mdi-image-remove-red-eye {
 	color: #757575;
 }
-
 .mdi-action-favorite {
 	cursor: pointer;
+}
+i.liked {
+	color: #ff7043;
 }
