@@ -1,7 +1,7 @@
 <?php 
 
 require 'functions/main.php';
-session_start();
+
 
 // access denied for non admin users
 if (!is_admin()) {

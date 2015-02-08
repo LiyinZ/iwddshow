@@ -2,8 +2,7 @@
 
 require 'functions/main.php';
 
-session_start();
-
+$_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
 
 $conn = connect($local_db);
 
@@ -46,7 +45,7 @@ include 'partials/intro.php';
                     	</p>
                         <p>
                         	<a href="/iwddshow/functions/view_count.php?url=<?= $project['url']; ?>">Visit Link</a>
-                            <i class="mdi-action-favorite right"> 5</i>
+                            <i id="<?= $project['project_id'] ?>" onclick="like_add(<?= $project['project_id'] ?>)" class="mdi-action-favorite right"> <?= $project['likes'] ?></i>
                         	<i class="mdi-image-remove-red-eye right"> <?= $project['view_count']; ?></i>
                         </p>
                     </div>
@@ -93,7 +92,7 @@ include 'partials/intro.php';
                     	</p>
                         <p>
                         	<a href="/iwddshow/functions/view_count.php?url=<?= $project['url']; ?>">Visit Link</a>
-                            <i class="mdi-action-favorite right"> 5</i>
+                            <i id="<?= $project['project_id'] ?>" onclick="like_add(<?= $project['project_id'] ?>)" class="mdi-action-favorite right"> <?= $project['likes'] ?></i>
                         	<i class="mdi-image-remove-red-eye right"> <?= $project['view_count']; ?></i>
                         </p>
                     </div>

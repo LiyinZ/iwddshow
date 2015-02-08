@@ -1,7 +1,7 @@
 <?php 
 
 require 'functions/main.php';
-session_start();
+
 
 // make sure it's post request before preparing database queries
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

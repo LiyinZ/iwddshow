@@ -1,7 +1,7 @@
 <?php 
 
 require 'functions/main.php';
-session_start();
+
 
 // only logged in users are able to submit, otherwise, redirect to homepage
 if (is_logged_in()) {

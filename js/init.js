@@ -6,3 +6,20 @@
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space
+
+function like_add(project_id) {
+	$.post('functions/like_add.php', {project_id:project_id}, function(data) {
+		/*if (data == 'success') {
+			like_get(project_id);
+		} else {
+			alert(data);
+		}*/
+		like_get(project_id);
+	});
+}
+
+function like_get(project_id) {
+	$.post('functions/like_get.php', {project_id:project_id}, function(data) {
+		$('li#' + project_id).text(data);
+	});
+}

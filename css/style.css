@@ -81,3 +81,11 @@
 .card-content>.card-title>i {
 	margin: 10px auto -13px;
 }
+
+.card-content p a ~ i {
+	color: #757575;
+}
+
+.mdi-action-favorite {
+	cursor: pointer;
+}

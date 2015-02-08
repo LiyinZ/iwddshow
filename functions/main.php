@@ -147,11 +147,12 @@ function set_query($order, $limit) {
 		$order = 'author_az';
 	}
 	$sql = "SELECT 
-		php_a1_projects.id,
+		php_a1_projects.id as project_id,
 		name,
 		description,
 		php_a1_projects.url,
 		view_count,
+		likes,
 		first_name,
 		last_name,
 		php_a1_users.url as user_url 
@@ -182,4 +183,47 @@ function get_heading($order) {
 	return isset($headings[$order])? $headings[$order] : 'Author';
 }
 
+
+
+
+/* --- LIKE / UNLIKE functions --- */
+
+function project_exists($project_id, $conn) {
+	$bindings = ['project_id'=>$project_id];
+	$sql = "SELECT id FROM php_a1_projects WHERE id = :project_id";
+	return query($sql, $bindings, $conn);
+}
+
+// return like_id (int) or false
+function prev_liked($project_id, $ip, $conn) {
+	$bindings = ['project_id'=>$project_id, 'ip'=>$ip];
+	$sql = "SELECT like_id FROM php_a1_likes WHERE ipv4 = INET_ATON(:ip) AND project_id = :project_id";
+	return query($sql, $bindings, $conn);
+}
+
+// return # of likes or false
+function like_count($project_id, $conn) {
+	$bindings = ['project_id'=>$project_id];
+	$sql = "SELECT likes FROM php_a1_projects WHERE id = $project_id";
+	return query($sql, $bindings, $conn)->fetchColumn();
+}
+
+// 
+function add_like($project_id, $ip, $conn) {
+	$bindings = ['project_id'=>$project_id, 'ip'=>$ip];
+	$sql = "INSERT INTO php_a1_likes (ipv4, project_id) VALUES (INET_ATON(:ip), :project_id);
+			UPDATE php_a1_projects SET likes = likes + 1 WHERE id = :project_id;";
+	query($sql, $bindings, $conn);
+}
+
+function unlike($project_id, $ip, $conn) {
+	$bindings = ['project_id'=>$project_id, 'ip'=>$ip];
+	$sql = "DELETE FROM php_a1_likes WHERE ipv4 = INET_ATON(:ip) AND project_id = :project_id;
+			UPDATE php_a1_projects SET likes = likes - 1 WHERE id = :project_id;";
+	query($sql, $bindings, $conn);
+}
+
+
+
+session_start();
  ?>

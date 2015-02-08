@@ -1,0 +1,6 @@
+CREATE TABLE php_a1_likes (
+	like_id INT NOT NULL AUTO_INCREMENT,
+	ipv4 INT UNSIGNED NOT NULL,
+	project_id INT NOT NULL,
+	PRIMARY KEY (like_id)
+);

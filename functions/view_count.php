@@ -1,7 +1,7 @@
 <?php 
 
 require 'main.php';
-session_start();
+
 
 if (isset($_GET['url'])) {
 	$url = $_GET['url'];
