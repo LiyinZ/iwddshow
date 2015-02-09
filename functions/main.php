@@ -140,6 +140,7 @@ function set_query($order, $limit) {
 		'views_least'=>'view_count',
 		'author_za' => 'first_name DESC',
 		'name_za'   => 'name DESC',
+		'popular'=> 'likes DESC',
 		'latest'	=> 'php_a1_projects.id DESC',
 		'views_most'=> 'view_count DESC'
 	);
@@ -171,6 +172,7 @@ function get_projects($conn, $order, $limit=null) {
 // use to dynamically dispaly appropriate heading for view all page
 function get_heading($order) {
 	$headings = array(
+		'popular'	=> 'Popular',
 		'author_az' => 'Author',
 		'name_az'   => 'Projects',
 		'oldest'	=> 'Oldest',
@@ -178,7 +180,7 @@ function get_heading($order) {
 		'author_za' => 'Author',
 		'name_za'   => 'Projects',
 		'latest'	=> 'Latest',
-		'views_most'=> 'Popular'
+		'views_most'=> 'Most Viewed'
 	);
 	return isset($headings[$order])? $headings[$order] : 'Author';
 }

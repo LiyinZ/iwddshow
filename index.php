@@ -9,7 +9,7 @@ $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
 $conn = connect($local_db);
 
 // fetch projects and order by most views and most recent
-$popular = get_projects($conn, 'views_most', 3);
+$popular = get_projects($conn, 'popular', 3);
 $latest = get_projects($conn, 'latest', 3);
 
 $title = 'IWDD Showcase | Share & Learn';
@@ -68,7 +68,7 @@ include 'partials/intro.php';
     <br>
     <div class="section" id="latest">
     	<div class="row sub-heading">
-    		<a href="/iwddshow/all.php?order=views_most">View All</a>
+    		<a href="/iwddshow/all.php?order=popular">View All</a>
     		<h4>Popular</h4>
     	</div>
 

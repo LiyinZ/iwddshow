@@ -34,12 +34,13 @@ require 'partials/header.php';
 				<div class="col s8">
 					<select name="order" id="order">
 						<option value="author_az">Author A-Z</option>
-						<option <?= is_selected($_GET['order'], 'views_most'); ?> value="views_most">Most Viewed</option>
+						<option <?= is_selected($_GET['order'], 'views_most'); ?> value="views_most">Most Views</option>
 						<option <?= is_selected($_GET['order'], 'name_az'); ?> value="name_az">Project Name A-Z</option>
 						<option <?= is_selected($_GET['order'], 'latest'); ?> value="latest">Latest</option>
+						<option <?= is_selected($_GET['order'], 'popular'); ?> value="popular">Most Liked</option>
 						<option disabled></option>
 						<option <?= is_selected($_GET['order'], 'author_za'); ?> value="author_za">Author Z-A</option>
-						<option <?= is_selected($_GET['order'], 'views_least'); ?> value="views_least">Least Viewed</option>
+						<option <?= is_selected($_GET['order'], 'views_least'); ?> value="views_least">Least Views</option>
 						<option <?= is_selected($_GET['order'], 'name_za'); ?> value="name_za">Project Name Z-A</option>
 						<option <?= is_selected($_GET['order'], 'oldest'); ?> value="oldest">Oldest</option>
 					</select>
