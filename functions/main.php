@@ -188,27 +188,28 @@ function get_heading($order) {
 
 /* --- LIKE / UNLIKE functions --- */
 
+// make sure the project id exists before doing other 'like' functions
 function project_exists($project_id, $conn) {
 	$bindings = ['project_id'=>$project_id];
 	$sql = "SELECT id FROM php_a1_projects WHERE id = :project_id";
 	return query($sql, $bindings, $conn);
 }
 
-// return like_id (int) or false
+// see if a project is previously liked by a specific ip
 function prev_liked($project_id, $ip, $conn) {
 	$bindings = ['project_id'=>$project_id, 'ip'=>$ip];
 	$sql = "SELECT like_id FROM php_a1_likes WHERE ipv4 = INET_ATON(:ip) AND project_id = :project_id";
 	return query($sql, $bindings, $conn);
 }
 
-// return # of likes or false
+// count how many likes a project has, for displaying on a page
 function like_count($project_id, $conn) {
 	$bindings = ['project_id'=>$project_id];
 	$sql = "SELECT likes FROM php_a1_projects WHERE id = $project_id";
 	return query($sql, $bindings, $conn)->fetchColumn();
 }
 
-// 
+// add 1 like to the project related to an ip, if ip is invalid, nothing happens
 function add_like($project_id, $ip, $conn) {
 	$bindings = ['project_id'=>$project_id, 'ip'=>$ip];
 	$sql = "INSERT INTO php_a1_likes (ipv4, project_id) VALUES (INET_ATON(:ip), :project_id);
@@ -216,6 +217,7 @@ function add_like($project_id, $ip, $conn) {
 	query($sql, $bindings, $conn);
 }
 
+// subtract 1 like if previously liked
 function unlike($project_id, $ip, $conn) {
 	$bindings = ['project_id'=>$project_id, 'ip'=>$ip];
 	$sql = "DELETE FROM php_a1_likes WHERE ipv4 = INET_ATON(:ip) AND project_id = :project_id;

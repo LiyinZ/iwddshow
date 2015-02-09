@@ -2,6 +2,7 @@
 
 require 'main.php';
 
+// check if it's ajax post request and if it comes from a page with ip set
 if ( isset($_POST['project_id']) &&  isset($_SESSION['ip']) ) {
 	$conn = connect($local_db);
 	if ( project_exists($_POST['project_id'], $conn) ) {

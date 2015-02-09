@@ -22,7 +22,7 @@ require 'partials/header.php';
 
  ?>
 
-<div class="container" id="viewall">
+<div class="container project-card" id="viewall">
 	<br>
 	<div class="section row">
 		<div class="col s12 m4 l3">

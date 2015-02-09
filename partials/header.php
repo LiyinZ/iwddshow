@@ -22,7 +22,7 @@
                     <ul id="nav-mobile" class="right side-nav">
                         <li><?= is_admin()? '<a href="/iwddshow/admin.php">Admin</a>' : ''; ?></li>
                         <li><a href="/iwddshow/submit.php"><i class="mdi-content-add-circle"></i></a></li>
-                        <li><a href="#about">About</a>
+                        <li><a href="#about" onclick="toast('See About info in footer.', 4000)">About</a>
                         </li>
                         <li>
                             <?php if (is_logged_in()): ?>

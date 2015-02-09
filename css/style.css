@@ -54,7 +54,7 @@
 	position: relative;
 	z-index: 0
 }
-.card .card-content {
+.project-card .card .card-content {
 	margin-top: -10%;
 	background-color: #fff;
 	padding-top: 10px;

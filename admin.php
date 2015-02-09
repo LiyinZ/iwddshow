@@ -68,6 +68,7 @@ require 'partials/header.php';
               <th>User ID</th>
               <th>Project URL</th>
               <th>View Count</th>
+              <th>Likes</th>
               <th>Last Viewed</th>
               <th>Created At</th>
           </tr>
@@ -82,6 +83,7 @@ require 'partials/header.php';
             <td><?= $project['user_id']; ?></td>
             <td><?= $project['url']; ?></td>
             <td><?= $project['view_count']; ?></td>
+            <td><?= $project['likes']; ?></td>
             <td><?= $project['last_view']; ?></td>
             <td><?= $project['created_at']; ?></td>
           </tr>

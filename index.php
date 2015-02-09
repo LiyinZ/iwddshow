@@ -18,7 +18,7 @@ require 'partials/header.php';
 include 'partials/intro.php';
 ?>
 
-<div class="container">
+<div class="container project-card">
     <div class="section" id="popular">
     	<div class="row sub-heading">
     		<a href="/iwddshow/all.php?order=latest">View All</a>
