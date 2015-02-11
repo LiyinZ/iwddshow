@@ -140,7 +140,7 @@ function set_query($order, $limit) {
 		'views_least'=>'view_count',
 		'author_za' => 'first_name DESC',
 		'name_za'   => 'name DESC',
-		'popular'=> 'likes DESC',
+		'popular'=> 'likes DESC, view_count DESC',
 		'latest'	=> 'php_a1_projects.id DESC',
 		'views_most'=> 'view_count DESC'
 	);
