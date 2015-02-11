@@ -99,7 +99,12 @@ function activate_user($user_id, $url, $config) {
 	$result = $conn->query($sql)->fetch();
 	if ($result['last_logged'] === '0000-00-00 00:00:00') {
 		// send email
-		/*mail($student_num . '@student.georgianc.on.ca', 'Thanks for activating on IWDD Showcase', 'You have now successfully activated your account, feel free to share your awesome work with your classmates!');*/
+		/*if ($user_id !== 2) {
+			$student_num = $result['student_num'];
+			mail("$student_num@student.georgianc.on.ca", "Thank you for activating on IWDD Showcase", "You have now successfully activated your account, feel free to share your awesome work with your classmates!");
+		} else { // instructor email does not use student number
+			mail('rich.freeman@georgiancollege.ca', 'Thank you for activating on IWDD Showcase', 'You have now successfully activated your account!');
+		}*/
 	}
 	// activate user
 	$sql = "UPDATE php_a1_users SET last_logged = now() WHERE id = $user_id";
