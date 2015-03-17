@@ -45,16 +45,24 @@ function connect($db_config) {
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		return $conn;
 	} catch (Exception $e) {
-		return false;
+		mail('gc200298955@student.georgianc.on.ca', 'iwddshow Connection Errors', "You have the following connection erros: $e");
+		redirect('/iwddshow/error.php');
+		exit();
 	}
 }
 
 // reusable and more secure function for queries with bindings, returns query or false
 function query($sql, $bindings, $conn) {
-	$stmt = $conn->prepare($sql);
-	$stmt->execute($bindings);
+	try {
+		$stmt = $conn->prepare($sql);
+		$stmt->execute($bindings);
 
-	return ( $stmt->rowCount() > 0)? $stmt : false;
+		return ( $stmt->rowCount() > 0)? $stmt : false;
+	} catch (Exception $e) {
+		mail('gc200298955@student.georgianc.on.ca', 'iwddshow Query Errors', "You have the following querying erros: $e");
+		redirect('/iwddshow/error.php');
+		exit();
+	}
 }
 
 
@@ -99,7 +107,7 @@ function activate_user($user_id, $url, $config) {
 	$result = $conn->query($sql)->fetch();
 	if ($result['last_logged'] === '0000-00-00 00:00:00') {
 		// send email
-		/*if ($user_id !== 2) {
+		/*if ($user_id != 2) {
 			$student_num = $result['student_num'];
 			mail("$student_num@student.georgianc.on.ca", "Thank you for activating on IWDD Showcase", "You have now successfully activated your account, feel free to share your awesome work with your classmates!");
 		} else { // instructor email does not use student number
